@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	<classPathEntry location="mysql-connector-java-5.1.13-bin.jar" />
+
+	<context id="MySqlTables" targetRuntime="MyBatis3">
+
+		<commentGenerator>
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+		
+		<!-- 数据库 -->
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://localhost:3306/db_personmanager" userId="root"
+			password="root">
+		</jdbcConnection>
+
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+<!-- 模型类存放的包 -->
+		<javaModelGenerator targetPackage="com.ww.model"
+			targetProject="../">
+			<property name="enableSubPackages" value="false" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+
+		<sqlMapGenerator targetPackage="com.ww.dao"
+			targetProject="../">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="com.ww.dao" targetProject="../">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+
+		<!-- 数据库包名  -->
+		<table tableName="tb_cj" domainObjectName="Cj"></table>
+		<table tableName="tb_department" domainObjectName="Department"></table>
+	   <table tableName="tb_invitejob" domainObjectName="Invitejob"></table>
+	   <table tableName="tb_train" domainObjectName="Train"></table>
+	   <table tableName="tb_pay" domainObjectName="Pay"></table>
+	   <table tableName="tb_manager" domainObjectName="Manager"></table>
+		<table tableName="tb_employee" domainObjectName="Employee"></table>
+	</context>
+</generatorConfiguration>
