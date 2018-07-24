@@ -1,16 +1,23 @@
 ﻿package com.ww.model;
 
+/**
+ * 奖惩信息 实体类
+ * 
+ * @author dell
+ *
+ */
 public class Cj {
+	//编号
     private Integer id;
-
+    //奖惩标题
     private String cjTitle;
-
+    //奖惩类型
     private String cjType;
-
+    //奖惩金额
     private String cjMoney;
-
+    //发生时间
     private String cjTime;
-
+    //奖惩内容
     private String cjContent;
 
     public Integer getId() {
@@ -61,4 +68,12 @@ public class Cj {
     public void setCjContent(String cjContent) {
         this.cjContent = cjContent == null ? null : cjContent.trim();
     }
+
+	@Override
+	public String toString() {
+		return "Cj [id=" + id + ", cjTitle=" + cjTitle + ", cjType=" + cjType
+				+ ", cjMoney=" + cjMoney + ", cjTime=" + cjTime
+				+ ", cjContent=" + cjContent + "]";
+	}
+    
 }

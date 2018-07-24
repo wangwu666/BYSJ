@@ -1,34 +1,41 @@
 ﻿package com.ww.model;
 
+/**
+ * 招聘信息 实体类
+ * 
+ * @author dell
+ *
+ */
 public class Invitejob {
+	//编号
 	private Integer id;
-
+	//招聘人员姓名
 	private String name;
-
+	//招聘人员性别
 	private String sex;
-
+	//招聘人员年龄
 	private Integer age;
-
+	//招聘人员出生日期
 	private String born;
-
+	//招聘人员职位
 	private String job;
-
+	//招聘人员专业
 	private String specialty;
-
+	//招聘人员有无工作经验
 	private String experience;
-
+	//招聘人员文化程度
 	private String teachschool;
-
+	//招聘人员毕业学校
 	private String afterschool;
-
+	//招聘人员电话
 	private String tel;
-
+	//招聘人员地址
 	private String address;
-
+	//招聘人员上岗时间
 	private String createtime;
-	// Integer默认值为null
+	//招聘人员录用状态
 	private int isstock;
-
+	//招聘人员描述
 	private String content;
 
 	public Integer getId() {
@@ -150,4 +157,42 @@ public class Invitejob {
 	public void setContent(String content) {
 		this.content = content == null ? null : content.trim();
 	}
+
+	public Invitejob(Integer id, String name, String sex, Integer age,
+			String born, String job, String specialty, String experience,
+			String teachschool, String afterschool, String tel, String address,
+			String createtime, int isstock, String content) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.sex = sex;
+		this.age = age;
+		this.born = born;
+		this.job = job;
+		this.specialty = specialty;
+		this.experience = experience;
+		this.teachschool = teachschool;
+		this.afterschool = afterschool;
+		this.tel = tel;
+		this.address = address;
+		this.createtime = createtime;
+		this.isstock = isstock;
+		this.content = content;
+	}
+
+	public Invitejob() {
+		super();
+	}
+
+	@Override
+	public String toString() {
+		return "Invitejob [id=" + id + ", name=" + name + ", sex=" + sex
+				+ ", age=" + age + ", born=" + born + ", job=" + job
+				+ ", specialty=" + specialty + ", experience=" + experience
+				+ ", teachschool=" + teachschool + ", afterschool="
+				+ afterschool + ", tel=" + tel + ", address=" + address
+				+ ", createtime=" + createtime + ", isstock=" + isstock
+				+ ", content=" + content + "]";
+	}
+	
 }

@@ -1,40 +1,47 @@
 ﻿package com.ww.dao;
 
-import com.ww.model.Pay;
-import com.ww.model.PayExample;
 import java.util.List;
-import org.apache.ibatis.annotations.Param;
 
+import com.ww.model.Pay;
+
+/**
+ * 薪资 数据访问层
+ * 
+ * @author dell
+ *
+ */
 public interface PayMapper {
-    int countByExample(PayExample example);
-
-    int deleteByExample(PayExample example);
-
-    //通过id进行删除
-    int deleteByPrimaryKey(Integer id);
-    //通过id来添加
-    int insert(Pay record);
-
-    int insertSelective(Pay record);
-
-    List<Pay> selectByExample(PayExample example);
-    
-    //查询薪资表
+    /**
+     * 查询薪资表
+     * @return
+     */
     List<Pay> selectPay();
-    
-    //通过模糊姓名条件查询
+	
+    /**
+     * 通过模糊姓名条件查询
+     * @param name
+     * @return
+     */
     List<Pay> selectList(String name);
     
-    //通过日期查询
+    /**
+     * 通过日期查询
+     * @param date
+     * @return
+     */
     List<Pay> selectDate(String date);
     
-    Pay selectByPrimaryKey(Integer id);
-
-    int updateByExampleSelective(@Param("record") Pay record, @Param("example") PayExample example);
-
-    int updateByExample(@Param("record") Pay record, @Param("example") PayExample example);
-
-    int updateByPrimaryKeySelective(Pay record);
-
-    int updateByPrimaryKey(Pay record);
+    /**
+     * 通过id进行删除
+     * @param id
+     * @return
+     */
+    int deleteByPrimaryKey(Integer id);
+    
+    /**
+     * 通过id来添加
+     * @param record
+     * @return
+     */
+    int insert(Pay record);
 }

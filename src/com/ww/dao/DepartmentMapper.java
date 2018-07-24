@@ -1,41 +1,42 @@
 ﻿package com.ww.dao;
 
-import com.ww.model.Department;
-import com.ww.model.DepartmentExample;
 import java.util.List;
-import org.apache.ibatis.annotations.Param;
 
+import com.ww.model.Department;
+
+/**
+ * 部门   数据访问层
+ * 
+ * @author dell
+ *
+ */
 public interface DepartmentMapper {
-	int countByExample(DepartmentExample example);
-
-	int deleteByExample(DepartmentExample example);
-
-	// 通过id来删除部门记录
+	
+	/**
+	 * 通过部门名称查询部门表
+	 * @param name
+	 * @return
+	 */
+	List<Department> selectDepartmentByName(String name);
+	
+	/**
+	 * 添加部门
+	 * @param record
+	 * @return
+	 */
+	int insert(Department record);
+	
+	/**
+	 * 查询部门表
+	 * @return
+	 */
+	List<Department> selectDepartment();
+	
+	/**
+	 * 通过id来删除部门记录
+	 * @param id
+	 * @return
+	 */
 	int deleteByPrimaryKey(Integer id);
 
-	// 添加部门
-	int insert(Department record);
-
-	int insertSelective(Department record);
-
-	List<Department> selectByExample(DepartmentExample example);
-
-	// 通过部门名称查询部门表
-	List<Department> selectDepartmentByName(String name);
-
-
-	// 查询部门表
-	List<Department> selectDepartment();
-
-	Department selectByPrimaryKey(Integer id);
-
-	int updateByExampleSelective(@Param("record") Department record,
-			@Param("example") DepartmentExample example);
-
-	int updateByExample(@Param("record") Department record,
-			@Param("example") DepartmentExample example);
-
-	int updateByPrimaryKeySelective(Department record);
-
-	int updateByPrimaryKey(Department record);
 }

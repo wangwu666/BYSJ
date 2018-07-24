@@ -36,7 +36,6 @@ public class ManagerService {
 	 */
 	public Manager loginService(String account,String password){
 		Manager manager = managerMapper.updateLogin(account, password);
-		System.out.println(manager);
 		return manager;
 	}
 	
