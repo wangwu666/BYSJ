@@ -1,12 +1,19 @@
 ﻿package com.ww.model;
 
+/**
+ * 系统用户 实体类
+ * 
+ * @author dell
+ *
+ */
 public class Manager {
+	//编号
     private Integer id;
-
+    //登录账号
     private String account;
-
+    //登录密码
     private String password;
-
+    //用户身份(1:管理员    0:普通用户)
     private String managerlevel;
 
     public Integer getId() {
@@ -40,4 +47,24 @@ public class Manager {
     public void setManagerlevel(String managerlevel) {
         this.managerlevel = managerlevel == null ? null : managerlevel.trim();
     }
+
+	public Manager(Integer id, String account, String password,
+			String managerlevel) {
+		super();
+		this.id = id;
+		this.account = account;
+		this.password = password;
+		this.managerlevel = managerlevel;
+	}
+
+	public Manager() {
+		super();
+	}
+
+	@Override
+	public String toString() {
+		return "Manager [id=" + id + ", account=" + account + ", password="
+				+ password + ", managerlevel=" + managerlevel + "]";
+	}
+    
 }

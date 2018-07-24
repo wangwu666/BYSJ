@@ -38,7 +38,6 @@ public class InviteJobService {
 	 */
 	public List<Invitejob> selectInvitejobById(int id) {
 		List<Invitejob> list = invitejobMapper.selectByPrimaryKey(id);
-		System.out.println(list);
 		return list;
 	}
 

@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 
 import com.ww.dao.EmployeeMapper;
 import com.ww.model.Employee;
-import com.ww.model.EmployeeExample;
 
 /**
  * 员工业务层
@@ -38,8 +37,9 @@ public class EmployeeService {
 	 * @return
 	 */
 	public List<Employee> selectEmployeeByDtname() {
-		EmployeeExample employeeExample = new EmployeeExample();
-		return employeeMapper.selectByExampleJava(employeeExample);
+//		EmployeeExample employeeExample = new EmployeeExample();
+//		return employeeMapper.selectByExampleJava(employeeExample);
+		return null;
 	}
 
 	/**
@@ -52,8 +52,7 @@ public class EmployeeService {
 	public List<Employee> queryGoodsByPage(int pageSize, int curPage) {
 		// 开始的记录 =(总页数-1)*页面的条数
 		int startIndex = (curPage - 1) * pageSize;
-		List<Employee> list = employeeMapper.queryGoodsByPage(pageSize,
-				startIndex);
+		List<Employee> list = employeeMapper.queryGoodsByPage(pageSize,startIndex);
 		return list;
 	}
 
