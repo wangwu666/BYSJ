@@ -12,14 +12,12 @@
 
 
 	<!-- 查询显示部门表 -->
-	<select id="selectDepartment" resultMap="BaseResultMap"
-		parameterType="com.ww.model.DepartmentExample">
+	<select id="selectDepartment" resultMap="BaseResultMap" >
 		select * from tb_department
   	</select>
 
 	<!-- 查询显示部门表 -->
-	<select id="selectDepartmentByName" resultMap="BaseResultMap"
-		parameterType="com.ww.model.DepartmentExample">
+	<select id="selectDepartmentByName" resultMap="BaseResultMap">
 		select * from
 		tb_department where dt_name=#{dtName}
 	</select>

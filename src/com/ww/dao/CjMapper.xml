@@ -9,28 +9,19 @@
 		<result column="cj_time" property="cjTime" jdbcType="VARCHAR" />
 	</resultMap>
 
-	<resultMap id="ResultMapWithBLOBs" type="com.ww.model.Cj"
-		extends="BaseResultMap">
-		<result column="cj_content" property="cjContent" jdbcType="LONGVARCHAR" />
-	</resultMap>
-
-
-
 	<!-- 查询奖惩表(cj) -->
-	<select id="selectCj" resultMap="BaseResultMap" parameterType="com.ww.model.CjExample">
+	<select id="selectCj" resultMap="BaseResultMap">
 		select * from tb_cj
   	</select>
 
 	<!-- 通过模糊标题查询奖惩表 -->
-	<select id="selectListByCj" resultMap="BaseResultMap"
-		parameterType="com.ww.model.CjExample">
+	<select id="selectListByCj" resultMap="BaseResultMap">
 		select * from tb_cj 
 		where cj_title like concat("%",#{cjTitle},"%")
 	</select>
 
 	<!-- 通过日期查询奖惩表 -->
-	<select id="selectDateByCj" resultMap="BaseResultMap"
-		parameterType="com.ww.model.CjExample">
+	<select id="selectDateByCj" resultMap="BaseResultMap">
 		select * from tb_cj 
 		where cj_time=#{cjTime} 	
   	</select>

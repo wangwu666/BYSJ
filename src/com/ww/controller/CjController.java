@@ -1,19 +1,17 @@
 package com.ww.controller;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.List;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
+import com.ww.model.Cj;
+import com.ww.service.CjService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.ww.model.Cj;
-import com.ww.service.CjService;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.List;
 
 
 /**
@@ -36,8 +34,8 @@ public class CjController {
 	 * @throws IOException
 	 */
 	@RequestMapping(value = "/insertCj")
-	public void insertCj(@ModelAttribute("cj") Cj cj,HttpServletRequest request, 
-				HttpServletResponse response) throws IOException {
+	public void insertCj(@ModelAttribute("cj") Cj cj, HttpServletRequest request,
+                         HttpServletResponse response) throws IOException {
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		cjService.insert(cj);

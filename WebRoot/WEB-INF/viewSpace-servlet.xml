@@ -57,10 +57,12 @@
 		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
 	</bean>
 
+	<!-- 
 	<bean id="trainMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
 		<property name="mapperInterface" value="com.ww.dao.TrainMapper" />
 		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
 	</bean>
+	 -->
 
 
 	<bean id="payMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">

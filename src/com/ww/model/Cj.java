@@ -1,13 +1,12 @@
-﻿package com.ww.model;
+package com.ww.model;
 
 /**
  * 奖惩信息 实体类
- * 
- * @author dell
  *
+ * @author dell
  */
 public class Cj {
-	//编号
+    //编号
     private Integer id;
     //奖惩标题
     private String cjTitle;
@@ -25,7 +24,6 @@ public class Cj {
     }
 
     public void setId(Integer id) {
-    	
         this.id = id;
     }
 
@@ -69,11 +67,11 @@ public class Cj {
         this.cjContent = cjContent == null ? null : cjContent.trim();
     }
 
-	@Override
-	public String toString() {
-		return "Cj [id=" + id + ", cjTitle=" + cjTitle + ", cjType=" + cjType
-				+ ", cjMoney=" + cjMoney + ", cjTime=" + cjTime
-				+ ", cjContent=" + cjContent + "]";
-	}
-    
+    @Override
+    public String toString() {
+        return "Cj [id=" + id + ", cjTitle=" + cjTitle + ", cjType=" + cjType
+                + ", cjMoney=" + cjMoney + ", cjTime=" + cjTime
+                + ", cjContent=" + cjContent + "]";
+    }
+
 }

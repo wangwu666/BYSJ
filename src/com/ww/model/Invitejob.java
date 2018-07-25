@@ -1,4 +1,4 @@
-﻿package com.ww.model;
+package com.ww.model;
 
 /**
  * 招聘信息 实体类

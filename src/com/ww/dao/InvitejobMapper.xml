@@ -17,8 +17,7 @@
 		<result column="createtime" property="createtime" jdbcType="VARCHAR" />
 		<result column="isstock" property="isstock" jdbcType="INTEGER" />
 	</resultMap>
-	<resultMap id="ResultMapWithBLOBs" type="com.ww.model.Invitejob"
-		extends="BaseResultMap">
+	<resultMap id="ResultMapWithBLOBs" type="com.ww.model.Invitejob" extends="BaseResultMap">
 		<result column="content" property="content" jdbcType="LONGVARCHAR" />
 	</resultMap>
 
@@ -36,15 +35,15 @@
   	</update>
 
 
-	<select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs"
-		parameterType="java.lang.Integer">
-		select
-		<include refid="Base_Column_List" />
-		,
-		<include refid="Blob_Column_List" />
-		from tb_invitejob
-		where id = #{id,jdbcType=INTEGER}
-	</select>
+	<!--<select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs"-->
+		<!--parameterType="java.lang.Integer">-->
+		<!--select-->
+		<!--<include refid="Base_Column_List" />-->
+		<!--,-->
+		<!--<include refid="Blob_Column_List" />-->
+		<!--from tb_invitejob-->
+		<!--where id = #{id,jdbcType=INTEGER}-->
+	<!--</select>-->
 
 
 	<!-- 修改过 -->
@@ -55,8 +54,7 @@
 
 
 	<!-- 通过非录用查询tb_invitejob -->
-	<select id="selectInvitejobNotEnroll" resultMap="BaseResultMap"
-		parameterType="com.ww.model.InvitejobExample">
+	<select id="selectInvitejobNotEnroll" resultMap="BaseResultMap">
 		SELECT id,name,sex,job,
 		teachSchool,experience from
 		tb_invitejob where isstock=0
@@ -64,8 +62,7 @@
 
 
 	<!-- 通过录用查询tb_invitejob -->
-	<select id="selectInvitejobEnroll" resultMap="BaseResultMap"
-		parameterType="com.ww.model.InvitejobExample">
+	<select id="selectInvitejobEnroll" resultMap="BaseResultMap">
 		SELECT id,name,sex,job,
 		teachSchool,experience from
 		tb_invitejob where isstock=1

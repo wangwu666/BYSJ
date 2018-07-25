@@ -1,10 +1,9 @@
 package com.ww.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import com.ww.dao.ManagerMapper;
 import com.ww.model.Manager;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
  * 用户业务层
@@ -34,7 +33,7 @@ public class ManagerService {
 	 * @param password
 	 * @return
 	 */
-	public Manager loginService(String account,String password){
+	public Manager loginService(String account, String password){
 		Manager manager = managerMapper.updateLogin(account, password);
 		return manager;
 	}
@@ -46,7 +45,7 @@ public class ManagerService {
 	 * @param managerlevel
 	 * @return
 	 */
-	public Manager loginService(String account,String password,String managerlevel){
+	public Manager loginService(String account, String password, String managerlevel){
 		Manager manager = managerMapper.login(account, password,managerlevel);
 		return manager;
 	}

@@ -1,20 +1,18 @@
 package com.ww.controller;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.io.UnsupportedEncodingException;
-import java.util.List;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
+import com.ww.model.Department;
+import com.ww.service.DepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.ww.model.Department;
-import com.ww.service.DepartmentService;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
+import java.util.List;
 
 
 /**
@@ -27,7 +25,7 @@ import com.ww.service.DepartmentService;
 public class DepartmentController {
 	
 	@Autowired
-	private  DepartmentService departmentService;
+	private DepartmentService departmentService;
 	
 	/**
 	 * 获取所有的部门信息
@@ -57,8 +55,8 @@ public class DepartmentController {
 	 */
 	@RequestMapping(value = "/insertDepartment")
 	public void insertDepartment(
-			@ModelAttribute("department") Department department,
-			HttpServletRequest request, HttpServletResponse response)throws IOException {
+            @ModelAttribute("department") Department department,
+            HttpServletRequest request, HttpServletResponse response)throws IOException {
 		//设置编码
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");

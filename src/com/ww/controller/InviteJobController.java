@@ -1,20 +1,18 @@
 package com.ww.controller;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.io.UnsupportedEncodingException;
-import java.util.List;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
+import com.ww.model.Invitejob;
+import com.ww.service.InviteJobService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.ww.model.Invitejob;
-import com.ww.service.InviteJobService;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
+import java.util.List;
 
 
 /**
@@ -27,7 +25,7 @@ import com.ww.service.InviteJobService;
 public class InviteJobController {
 	
 	@Autowired
-	private  InviteJobService inviteJobService;
+	private InviteJobService inviteJobService;
 	
 	/**
 	 * 添加招聘人员
@@ -38,8 +36,8 @@ public class InviteJobController {
 	 */
 	@RequestMapping(value = "/insertInvitejob")
 	public void insertInvitejob(
-			@ModelAttribute("invitejob") Invitejob invitejob,
-			HttpServletRequest request, HttpServletResponse response) throws IOException {
+            @ModelAttribute("invitejob") Invitejob invitejob,
+            HttpServletRequest request, HttpServletResponse response) throws IOException {
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		inviteJobService.insertInvitejob(invitejob);
@@ -80,14 +78,14 @@ public class InviteJobController {
 	 * @param request
 	 * @return
 	 */
-	@RequestMapping(value = "/selectInvitejobById")
-	public String selectInvitejobById(HttpServletRequest request) {
-		int id = Integer.valueOf(request.getParameter("id"));
-		System.out.println(id);
-		List<Invitejob> list = inviteJobService.selectInvitejobById(id);
-		request.setAttribute("list", list);
-		return "jsp/invitejob/SelectInvitejobById.jsp";
-	}
+//	@RequestMapping(value = "/selectInvitejobById")
+//	public String selectInvitejobById(HttpServletRequest request) {
+//		int id = Integer.valueOf(request.getParameter("id"));
+//		System.out.println(id);
+//		List<Invitejob> list = inviteJobService.selectInvitejobById(id);
+//		request.setAttribute("list", list);
+//		return "jsp/invitejob/SelectInvitejobById.jsp";
+//	}
 	
 	
 	/**

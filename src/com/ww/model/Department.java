@@ -1,4 +1,4 @@
-﻿package com.ww.model;
+package com.ww.model;
 
 /**
  * 部门 实体类

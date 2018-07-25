@@ -1,8 +1,9 @@
-﻿package com.ww.dao;
+package com.ww.dao;
 
 import com.ww.model.Employee;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 /**
  * 员工信息  数据访问层
@@ -33,8 +34,8 @@ public interface EmployeeMapper {
 	 * 分页查员工表
 	 */
 	List<Employee> queryGoodsByPage(
-			@Param("pagesize") int pagesize,
-			@Param("startIndex") int startIndex);
+            @Param("pagesize") int pagesize,
+            @Param("startIndex") int startIndex);
 	
 	
 	/**

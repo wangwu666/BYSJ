@@ -1,20 +1,18 @@
 package com.ww.controller;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.List;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
+import com.ww.model.Employee;
+import com.ww.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.ww.model.Employee;
-import com.ww.service.EmployeeService;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.List;
 
 
 /**
@@ -38,7 +36,7 @@ public class EmployeeController {
 	 */
 	@RequestMapping(value = "/insertEmployee")
 	public void insertEmployee(@ModelAttribute("employee") Employee employee,
-			HttpServletRequest request, HttpServletResponse response)
+                               HttpServletRequest request, HttpServletResponse response)
 			throws IOException {
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
@@ -62,7 +60,7 @@ public class EmployeeController {
 	 */
 	@RequestMapping(value = "/updateEployee")
 	public void updateEmployeeById(HttpServletRequest request,
-			HttpServletResponse response, Employee employee) throws IOException {
+                                   HttpServletResponse response, Employee employee) throws IOException {
 		// 设置编码
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");

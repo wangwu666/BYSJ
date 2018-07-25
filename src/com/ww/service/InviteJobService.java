@@ -1,13 +1,12 @@
 package com.ww.service;
 
-import java.util.List;
-
+import com.ww.dao.InvitejobMapper;
+import com.ww.model.Invitejob;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
-import com.ww.dao.InvitejobMapper;
-import com.ww.model.Invitejob;
+import java.util.List;
 
 /**
  * 招聘信息业务层
@@ -36,10 +35,10 @@ public class InviteJobService {
 	 * @param id
 	 * @return
 	 */
-	public List<Invitejob> selectInvitejobById(int id) {
-		List<Invitejob> list = invitejobMapper.selectByPrimaryKey(id);
-		return list;
-	}
+//	public List<Invitejob> selectInvitejobById(int id) {
+//		List<Invitejob> list = invitejobMapper.selectByPrimaryKey(id);
+//		return list;
+//	}
 
 	/**
 	 *  通过非录用查询记录

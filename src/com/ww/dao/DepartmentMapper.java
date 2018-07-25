@@ -1,8 +1,8 @@
-﻿package com.ww.dao;
-
-import java.util.List;
+package com.ww.dao;
 
 import com.ww.model.Department;
+
+import java.util.List;
 
 /**
  * 部门   数据访问层

@@ -1,8 +1,8 @@
-﻿package com.ww.dao;
-
-import java.util.List;
+package com.ww.dao;
 
 import com.ww.model.Pay;
+
+import java.util.List;
 
 /**
  * 薪资 数据访问层

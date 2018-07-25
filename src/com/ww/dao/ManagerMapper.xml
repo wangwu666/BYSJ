@@ -10,7 +10,7 @@
   </resultMap> 
   
   <!-- 用户登录 -->
-  <select id="login" resultMap="BaseResultMap" parameterType="com.ww.model.ManagerExample" >
+  <select id="login" resultMap="BaseResultMap">
     select id,account,password,managerLevel from tb_manager
 		where 
 			account = #{account}
@@ -21,7 +21,7 @@
   </select>
   
   <!--先判断账号密码是否存在(没有状态值) -->
-  <select id="updateLogin" resultMap="BaseResultMap" parameterType="com.ww.model.ManagerExample" >
+  <select id="updateLogin" resultMap="BaseResultMap">
     select id,account,password,managerLevel from tb_manager
 		where 
 			account = #{account}

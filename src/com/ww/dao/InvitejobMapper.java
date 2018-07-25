@@ -1,10 +1,9 @@
-﻿package com.ww.dao;
-
-import java.util.List;
-
-import org.apache.ibatis.annotations.Param;
+package com.ww.dao;
 
 import com.ww.model.Invitejob;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 /**
  * 招聘信息 数据访问层
@@ -26,7 +25,7 @@ public interface InvitejobMapper {
 	 * @param id
 	 * @return
 	 */
-	List<Invitejob> selectByPrimaryKey(Integer id);
+//	List<Invitejob> selectByPrimaryKey(Integer id);
 	
 	/**
 	 * 通过非录用查询显示Invitejob
@@ -47,7 +46,7 @@ public interface InvitejobMapper {
 	 * @return
 	 */
 	List<Invitejob> goodsListByPagePay(@Param("pagesize") int pagesize,
-			@Param("startIndex") int startIndex);
+                                       @Param("startIndex") int startIndex);
 	
 	/**
 	 * 查总数招聘表

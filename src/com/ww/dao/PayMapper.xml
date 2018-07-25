@@ -24,7 +24,7 @@
   	
   	
   	<!-- 查询薪资表 -->
-	<select id="selectPay" resultMap="BaseResultMap" parameterType="com.ww.model.PayExample">
+	<select id="selectPay" resultMap="BaseResultMap">
 		SELECT id,pay_emName,pay_month,pay_baseMoney,pay_overtime*20 as
 		pay_overtime,pay_age*50 as pay_age,pay_check,pay_absent,pay_safety
 		,pay_baseMoney+pay_overtime*20+pay_age*50+pay_check-pay_safety as pay
@@ -32,7 +32,7 @@
   	</select>
 
 	<!-- 通过模糊姓名查询薪资表 -->
-	<select id="selectList" resultMap="BaseResultMap" parameterType="com.ww.model.PayExample">
+	<select id="selectList" resultMap="BaseResultMap">
 		select id,pay_emName,pay_month,pay_baseMoney,pay_overtime*20 as
 		pay_overtime,pay_age*50 as pay_age,pay_check,pay_absent,pay_safety
 		,pay_baseMoney+pay_overtime*20+pay_age*50+pay_check-pay_safety as pay
@@ -40,7 +40,7 @@
 	</select>
 
 	<!-- 通过日期查询薪资表 -->
-	<select id="selectDate" resultMap="BaseResultMap" parameterType="com.ww.model.PayExample">
+	<select id="selectDate" resultMap="BaseResultMap">
 		select id,pay_emName,pay_month,pay_baseMoney,pay_overtime*20 as
 		pay_overtime,pay_age*50 as pay_age,pay_check,pay_absent,pay_safety
 		,pay_baseMoney+pay_overtime*20+pay_age*50+pay_check-pay_safety as pay

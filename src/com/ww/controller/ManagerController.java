@@ -1,19 +1,17 @@
-﻿package com.ww.controller;
+package com.ww.controller;
 
-import java.io.IOException;
-import java.io.PrintWriter;
+import com.ww.model.Manager;
+import com.ww.service.ManagerService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import com.ww.model.Manager;
-import com.ww.service.ManagerService;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 /**
  * 员工控制层
@@ -79,7 +77,7 @@ public class ManagerController {
 	 * @throws IOException
 	 */
 	@RequestMapping(value = "/updateManager")
-	public void updateManager(HttpServletRequest request,HttpServletResponse response) 
+	public void updateManager(HttpServletRequest request, HttpServletResponse response)
 		throws IOException {
 		// 设置编码
 		request.setCharacterEncoding("utf-8");
