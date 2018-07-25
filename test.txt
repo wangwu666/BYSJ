@@ -7,3 +7,6 @@ wangwu:  修改
 
 
 wangwen:   用pull拉取远程代码
+
+
+测试git fetch 与 git pull
