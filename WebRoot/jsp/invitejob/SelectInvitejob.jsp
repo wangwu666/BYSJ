@@ -16,7 +16,7 @@
 	<head>
 		<base href="<%=basePath%>">
 
-		<title></title>
+		<title>招聘信息</title>
 
 		<meta http-equiv="pragma" content="no-cache">
 		<meta http-equiv="cache-control" content="no-cache">
@@ -30,12 +30,13 @@
 	</head>
 
 	<body>
+	<center>
 		<a href="./jsp/index.jsp">首页</a>
 		<a href="selectInvitejobEnroll.do">录用查询</a>
 		<a href="selectInvitejobNotEnroll.do">非录用查询</a>
 		<a href="./jsp/invitejob/InsertInvitejob.jsp">添加招聘</a>
 
-		<table>
+		<table border="1" style="width: 80%">
 			<tr>
 				<th>
 					编号
@@ -122,5 +123,6 @@
 			<a href="selectInvitejob.do?pageSize=6&curPage=${totalPage }">尾页</a>
 			
 		</div>
+		</center>
 	</body>
 </html>

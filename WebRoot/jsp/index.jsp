@@ -40,7 +40,7 @@
 			    });	
 			    //跳转至招聘信息表显示
 			    $("#addInvite").click(function() {
-			        window.location.href = "selectInvitejob.do?pageSize=6&curPage=1";
+			        window.location.href = "selectInvitejob.do?pageSize=6&curPage=1";//insertInvitejob
 			    });
 			    //制定薪资信息
 			    $("#constituteCompensation").click(function() {
@@ -99,5 +99,5 @@
 		</center>
 	</body>
 </html>
-<!-- 路径问题 -->
+
 

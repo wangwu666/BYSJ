@@ -1,18 +1,22 @@
 package com.ww.controller;
 
-import com.ww.model.Invitejob;
-import com.ww.service.InviteJobService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.portlet.ModelAndView;
+
+import com.ww.model.Employee;
+import com.ww.model.Invitejob;
+import com.ww.service.InviteJobService;
 
 
 /**
@@ -26,6 +30,33 @@ public class InviteJobController {
 	
 	@Autowired
 	private InviteJobService inviteJobService;
+	
+	//分页显示招聘表
+	@RequestMapping(value = "/selectInvitejob")
+	public ModelAndView goodsListByPagePay(int pageSize, int curPage) {
+		
+		ModelAndView modelView = new ModelAndView();
+		modelView.setViewName("jsp/employee/SelectEmployee.jsp");
+			
+		List<Invitejob> goodsList = inviteJobService.goodsListByPagePay(pageSize,
+				curPage);
+		modelView.addObject("list", goodsList);
+		// pageSize一页的行数
+
+		// 总记录数
+		int total = inviteJobService.queryGoodsTotalPay();
+		System.out.println(total);
+		// 总的页数
+		int totalPage = total / pageSize;
+
+		if (total % pageSize != 0) {
+			totalPage = totalPage + 1;
+		}
+		modelView.addObject("totalPage", totalPage);
+		System.out.println("+++++++++++++++");
+		return modelView;
+	}
+
 	
 	/**
 	 * 添加招聘人员

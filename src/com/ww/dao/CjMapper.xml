@@ -6,6 +6,7 @@
 		<result column="cj_title" property="cjTitle" jdbcType="VARCHAR" />
 		<result column="cj_type" property="cjType" jdbcType="VARCHAR" />
 		<result column="cj_money" property="cjMoney" jdbcType="VARCHAR" />
+		<result column="cj_content" property="cjContent" jdbcType="VARCHAR" />
 		<result column="cj_time" property="cjTime" jdbcType="VARCHAR" />
 	</resultMap>
 

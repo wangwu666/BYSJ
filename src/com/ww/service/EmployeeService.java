@@ -49,8 +49,8 @@ public class EmployeeService {
 	 * @return
 	 */
 	public List<Employee> queryGoodsByPage(int pageSize, int curPage) {
-		// 开始的记录 =(总页数-1)*页面的条数
-		int startIndex = (curPage - 1) * pageSize;
+		// 开始的记录 =(当前页数-1)*页面的条数
+		int startIndex = (curPage - 1) * pageSize;//第几条开始
 		List<Employee> list = employeeMapper.queryGoodsByPage(pageSize,startIndex);
 		return list;
 	}

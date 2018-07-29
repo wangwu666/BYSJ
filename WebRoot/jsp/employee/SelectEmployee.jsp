@@ -20,7 +20,7 @@
 
 		<base href="<%=basePath%>">
 
-		<title>My JSP 'SelectEmployee.jsp' starting page</title>
+		<title>员工查询</title>
 
 		<meta http-equiv="pragma" content="no-cache">
 		<meta http-equiv="cache-control" content="no-cache">
@@ -37,103 +37,104 @@
 }
 </style>
 
-		<a href="./jsp/employee/InsertEmployee.jsp">添加员工</a>
-		<a href="./jsp/index.jsp">首页</a>
+
 
 	</head>
 
 	<body>
-
-		<table id="table">
-			<tr>
-				<th>
-					员工编号
-				</th>
-				<th>
-					姓名
-				</th>
-				<th>
-					性别
-				</th>
-				<th>
-					部门
-				</th>
-				<th>
-					工种
-				</th>
-				<th>
-					学历
-				</th>
-				<th>
-					参加工种时间
-				</th>
-				<th>
-					操作
-				</th>
-			</tr>
-			<s:forEach items="${list}" var="s">
+		<center>
+			<a href="./jsp/employee/InsertEmployee.jsp">添加员工</a>
+			<a href="./jsp/index.jsp">首页</a>
+			<table border="1" style="width: 80%">
 				<tr>
-
-					<td>
-						${s.getId()}
-					</td>
-					<td>
-						${s.getEmName()}
-					</td>
-					<td>
-						${s.getEmSex() }
-					</td>
-					<!-- 没有值 -->
-					<td>
-						${s.getDtName()}
-					</td>
-
-					<td>
-						${s.getEmTypework()}
-
-					</td>
-					<td>
-						${s.getEmCulture()}
-					</td>
-					<td>
-						${s.getEmCreatime()}
-					</td>
-					<!-- jstl判断管理员和用户登录状态 -->
-					<%
-						Manager manager = (Manager) session.getAttribute("manager");
-					%>
-					<s:set var="managerlevel">
-						<%=manager.getManagerlevel()%>
-					</s:set>
-					<s:choose>
-						<s:when test="${managerlevel==0}">
-							<td>
-								<a href="javascript:0;"
-									style="width: 36px; height: 20px; border: 1px solid #E8E8E8; background: #EFEFEF; color: #666; text-decoration: none; border-radius: 2px; display: inline-block; text-align: center; font-size: 12px; line-height: 20px;">修改</a>
-
-								<a href="javascript:0;"
-									style="width: 36px; height: 20px; border: 1px solid #E8E8E8; background: #EFEFEF; color: #666; text-decoration: none; border-radius: 2px; display: inline-block; text-align: center; font-size: 12px; line-height: 20px;">删除</a>
-
-							</td>
-						</s:when>
-						<s:when test="${managerlevel==1}">
-							<td>
-								<a
-									href="./jsp/employee/UpdateEmployee.jsp?id=${s.id}&&emName=${s.emName}&&emSex=${s.emSex}&&dtName=
-   						${s.dtName}&&emTypework=${s.emTypework}&&emCulture=${s.emCulture}&&emCreatime=${s.emCreatime}">修改</a>
-								<a href="deleteEmployee.do?id=${s.id}">删除</a>
-						</s:when>
-						<s:otherwise>请选择登录状态</s:otherwise>
-					</s:choose>
-					</td>
+					<th>
+						员工编号
+					</th>
+					<th>
+						姓名
+					</th>
+					<th>
+						性别
+					</th>
+					<th>
+						部门
+					</th>
+					<th>
+						工种
+					</th>
+					<th>
+						学历
+					</th>
+					<th>
+						参加工种时间
+					</th>
+					<th>
+						操作
+					</th>
 				</tr>
-			</s:forEach>
-		</table>
-		<div id="page">
-			<s:forEach begin="1" end="${totalPage }" var="i">
-				<a href="selectEmployee.do?pageSize=2&curPage=${i}">${i}</a>
-			</s:forEach>
-		</div>
+				<s:forEach items="${list}" var="s">
+					<tr>
 
+						<td>
+							${s.getId()}
+						</td>
+						<td>
+							${s.getEmName()}
+						</td>
+						<td>
+							${s.getEmSex() }
+						</td>
+						<!-- 没有值 -->
+						<td>
+							${s.getDtName()}
+						</td>
+
+						<td>
+							${s.getEmTypework()}
+
+						</td>
+						<td>
+							${s.getEmCulture()}
+						</td>
+						<td>
+							${s.getEmCreatime()}
+						</td>
+						<!-- jstl判断管理员和用户登录状态 -->
+						<%
+							Manager manager = (Manager) session.getAttribute("manager");
+						%>
+						<s:set var="managerlevel">
+							<%=manager.getManagerlevel()%>
+						</s:set>
+						<s:choose>
+							<s:when test="${managerlevel==0}">
+								<td>
+									<a href="javascript:0;"
+										style="width: 36px; height: 20px; border: 1px solid #E8E8E8; background: #EFEFEF; color: #666; text-decoration: none; border-radius: 2px; display: inline-block; text-align: center; font-size: 12px; line-height: 20px;">修改</a>
+
+									<a href="javascript:0;"
+										style="width: 36px; height: 20px; border: 1px solid #E8E8E8; background: #EFEFEF; color: #666; text-decoration: none; border-radius: 2px; display: inline-block; text-align: center; font-size: 12px; line-height: 20px;">删除</a>
+
+								</td>
+							</s:when>
+							<s:when test="${managerlevel==1}">
+								<td>
+									<a
+										href="./jsp/employee/UpdateEmployee.jsp?id=${s.id}&&emName=${s.emName}&&emSex=${s.emSex}&&dtName=
+   						${s.dtName}&&emTypework=${s.emTypework}&&emCulture=${s.emCulture}&&emCreatime=${s.emCreatime}">修改</a>
+									<a href="deleteEmployee.do?id=${s.id}">删除</a>
+							</s:when>
+							<s:otherwise>请选择登录状态</s:otherwise>
+						</s:choose>
+						</td>
+					</tr>
+				</s:forEach>
+			</table>
+			<div id="page">
+				<s:forEach begin="1" end="${totalPage}" var="i">
+					<a href="selectEmployee.do?pageSize=2&curPage=${i}">${i}</a>
+				</s:forEach>
+			</div>
+		</center>
 	</body>
 </html>

@@ -34,7 +34,7 @@ public interface EmployeeMapper {
 	 * 分页查员工表
 	 */
 	List<Employee> queryGoodsByPage(
-            @Param("pagesize") int pagesize,
+			@Param("pagesize") int pagesize,
             @Param("startIndex") int startIndex);
 	
 	

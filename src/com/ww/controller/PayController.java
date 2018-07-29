@@ -50,28 +50,7 @@ public class PayController {
 	}
 	
 	
-	/**
-//	 * 分页查询薪资表
-//	 * @param pageSize
-//	 * @param curPage
-//	 * @return
-//	 */
-//	@RequestMapping(value = "/selectInvitejob")
-//	public ModelAndView goodsListByPagePay(int pageSize, int curPage) {
-//		ModelAndView modelView = new ModelAndView(
-//				"jsp/invitejob/SelectInvitejob.jsp");
-//		List<Invitejob> goodsList = payService.goodsListByPagePay(pageSize,curPage);
-//		modelView.addObject("list", goodsList);
-//		// 总记录数
-//		int total = payService.queryGoodsTotalPay();
-//		// 总的页数
-//		int totalPage = total / pageSize;
-//		if (total % pageSize != 0) {
-//			totalPage = totalPage + 1;
-//		}
-//		modelView.addObject("totalPage", totalPage);
-//		return modelView;
-//	}
+	
 	
 	
 	/**
@@ -95,8 +74,10 @@ public class PayController {
 	@RequestMapping(value = "/selectList")
 	public String selectList(HttpServletRequest request) {
 		String name = request.getParameter("name");
+		
 		List<Pay> list = payService.selectList(name);
 		request.setAttribute("list", list);
+		
 		return "jsp/pay/SelectPay.jsp";
 	}
 	
@@ -109,8 +90,10 @@ public class PayController {
 	@RequestMapping(value = "/selectDate")
 	public String selectDate(HttpServletRequest request) {
 		String date = request.getParameter("date");
-		List<Pay> list = payService.selectList(date);
+		
+		List<Pay> list = payService.selectDate(date);
 		request.setAttribute("list", list);
+		
 		return "jsp/pay/SelectPay.jsp";
 	}
 	
