@@ -35,10 +35,10 @@ public class InviteJobService {
 	 * @param id
 	 * @return
 	 */
-//	public List<Invitejob> selectInvitejobById(int id) {
-//		List<Invitejob> list = invitejobMapper.selectByPrimaryKey(id);
-//		return list;
-//	}
+	public List<Invitejob> selectInvitejobById(int id) {
+		List<Invitejob> list = invitejobMapper.selectByPrimaryKey(id);
+		return list;
+	}
 
 	/**
 	 *  通过非录用查询记录

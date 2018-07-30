@@ -24,13 +24,15 @@
 		<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
-		<input type="button" name="Submit"
-			onclick="javascript:history.back(-1);" value="返回">
+		
 	</head>
 
 
 	<body>
-		<table>
+	<center>
+	<input type="button" name="Submit"
+			onclick="javascript:history.back(-1);" value="返回">
+		<table border="1" style="width: 80%">
 			<tr>
 				<th>
 					编号
@@ -80,5 +82,6 @@
 
 			</s:forEach>
 		</table>
+		</center>
 	</body>
 </html>

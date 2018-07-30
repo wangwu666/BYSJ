@@ -35,15 +35,7 @@
   	</update>
 
 
-	<!--<select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs"-->
-		<!--parameterType="java.lang.Integer">-->
-		<!--select-->
-		<!--<include refid="Base_Column_List" />-->
-		<!--,-->
-		<!--<include refid="Blob_Column_List" />-->
-		<!--from tb_invitejob-->
-		<!--where id = #{id,jdbcType=INTEGER}-->
-	<!--</select>-->
+	
 
 
 	<!-- 修改过 -->
@@ -75,8 +67,14 @@
 		id,name,sex,job, teachSchool,experience from tb_invitejob limit
 		#{startIndex},#{pagesize}
   	</select>
-
-
+<!-- 通过id来详细查询信息 -->
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select *
+    from tb_invitejob
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  	
+  	
 	<select id="queryGoodsTotalPay" resultType="int">
 		select count(*) from
 		tb_invitejob

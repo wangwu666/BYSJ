@@ -12,9 +12,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.portlet.ModelAndView;
 
-import com.ww.model.Employee;
+import org.springframework.web.servlet.ModelAndView;
+
 import com.ww.model.Invitejob;
 import com.ww.service.InviteJobService;
 
@@ -36,7 +36,7 @@ public class InviteJobController {
 	public ModelAndView goodsListByPagePay(int pageSize, int curPage) {
 		
 		ModelAndView modelView = new ModelAndView();
-		modelView.setViewName("jsp/employee/SelectEmployee.jsp");
+		modelView.setViewName("jsp/invitejob/SelectInvitejob.jsp");
 			
 		List<Invitejob> goodsList = inviteJobService.goodsListByPagePay(pageSize,
 				curPage);
@@ -53,7 +53,7 @@ public class InviteJobController {
 			totalPage = totalPage + 1;
 		}
 		modelView.addObject("totalPage", totalPage);
-		System.out.println("+++++++++++++++");
+		
 		return modelView;
 	}
 
@@ -109,14 +109,14 @@ public class InviteJobController {
 	 * @param request
 	 * @return
 	 */
-//	@RequestMapping(value = "/selectInvitejobById")
-//	public String selectInvitejobById(HttpServletRequest request) {
-//		int id = Integer.valueOf(request.getParameter("id"));
-//		System.out.println(id);
-//		List<Invitejob> list = inviteJobService.selectInvitejobById(id);
-//		request.setAttribute("list", list);
-//		return "jsp/invitejob/SelectInvitejobById.jsp";
-//	}
+	@RequestMapping(value = "/selectInvitejobById")
+	public String selectInvitejobById(HttpServletRequest request) {
+		int id = Integer.valueOf(request.getParameter("id"));
+		System.out.println(id);
+		List<Invitejob> list = inviteJobService.selectInvitejobById(id);
+		request.setAttribute("list", list);
+		return "jsp/invitejob/SelectInvitejobById.jsp";
+	}
 	
 	
 	/**

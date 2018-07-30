@@ -34,6 +34,8 @@ public class ManagerController {
 	@RequestMapping(value = "/login")
 	public void loginService(HttpServletRequest request,
 			HttpServletResponse response) throws IOException, ServletException {
+		request.setCharacterEncoding("utf-8");
+		response.setCharacterEncoding("utf-8");
 		//获取用户名，密码，身份等
 		String account = request.getParameter("account");
 		String password = request.getParameter("password");
@@ -61,6 +63,7 @@ public class ManagerController {
 				response.sendRedirect("jsp/index.jsp");
 			} else{
 				PrintWriter out = response.getWriter();
+				
 				out.println("<script>alert('身份错误');window.location.href='jsp/login.jsp';</script>");
 			}
 		} else {

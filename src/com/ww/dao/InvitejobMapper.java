@@ -25,7 +25,7 @@ public interface InvitejobMapper {
 	 * @param id
 	 * @return
 	 */
-//	List<Invitejob> selectByPrimaryKey(Integer id);
+	List<Invitejob> selectByPrimaryKey(Integer id);
 	
 	/**
 	 * 通过非录用查询显示Invitejob
